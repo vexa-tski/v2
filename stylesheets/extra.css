@@ -205,7 +205,7 @@ th:empty {
 
 /* Browse index cards: visible borders in dark mode */
 [data-md-color-scheme="slate"] .browse-index li {
-    border-color: rgba(230, 225, 218, 0.12);
+    border-color: rgba(220, 226, 230, 0.12);
 }
 
 [data-md-color-scheme="slate"] .browse-index li:hover {
