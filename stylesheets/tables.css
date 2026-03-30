@@ -1,0 +1,191 @@
+/* ============================
+   Table & Statblock Styling
+   ============================ */
+
+/* Base table improvements */
+.md-typeset table:not([class]) {
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 0.4em;
+    overflow: hidden;
+    border: 1px solid var(--md-default-fg-color--lightest);
+    width: auto;
+}
+
+.md-typeset table:not([class]) th,
+.md-typeset table:not([class]) td {
+    border: none;
+    border-bottom: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.md-typeset table:not([class]) tr:last-child td {
+    border-bottom: none;
+}
+
+/* Sortable table header indicators */
+.md-typeset table:not([class]) th[role="columnheader"] {
+    cursor: pointer;
+    position: relative;
+    padding-right: 1.5em;
+}
+
+.md-typeset table:not([class]) th[role="columnheader"]::after {
+    content: "⇅";
+    position: absolute;
+    right: 0.4em;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.3;
+    font-size: 0.75em;
+}
+
+.md-typeset table:not([class]) th[aria-sort="ascending"]::after {
+    content: "↑";
+    opacity: 0.7;
+}
+
+.md-typeset table:not([class]) th[aria-sort="descending"]::after {
+    content: "↓";
+    opacity: 0.7;
+}
+
+/* ============================
+   Ability Info Tables
+   (2-col: keywords | action)
+   ============================ */
+
+/* Ability info tables inside blockquotes — tighter layout */
+.md-typeset blockquote table {
+    margin: 0.4em 0;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 0.3em;
+    overflow: hidden;
+    border: 1px solid var(--md-default-fg-color--lightest);
+    background: var(--md-default-bg-color);
+}
+
+.md-typeset blockquote table td {
+    padding: 0.3em 0.6em;
+    border: none;
+}
+
+/* Standalone ability info tables (not in blockquotes, like hero abilities) */
+.md-typeset > table:not([class]) {
+    margin-bottom: 0.6em;
+}
+
+/* ============================
+   Power Roll Tier Styling
+   ============================ */
+
+/* Power roll tier indicators: colored left borders */
+.md-typeset li strong:first-child {
+    /* Default: no special styling, overridden below */
+}
+
+/* Tier 1: ≤11 — miss/weak result (red) */
+.md-typeset li:has(> strong:first-child:is(
+    [class~="power-tier-low"]
+)) {
+    border-left: 3px solid #e74c3c;
+    padding-left: 0.5em;
+}
+
+/* Tier 2: 12-16 — moderate result (amber) */
+.md-typeset li:has(> strong:first-child:is(
+    [class~="power-tier-mid"]
+)) {
+    border-left: 3px solid #f39c12;
+    padding-left: 0.5em;
+}
+
+/* Tier 3: 17+ — strong result (green) */
+.md-typeset li:has(> strong:first-child:is(
+    [class~="power-tier-high"]
+)) {
+    border-left: 3px solid #27ae60;
+    padding-left: 0.5em;
+}
+
+/* JS-applied tier classes (applied by ability-cards.js) */
+.md-typeset li.power-tier-low {
+    border-left: 3px solid #e74c3c;
+    padding-left: 0.6em;
+    margin-left: 0;
+}
+
+.md-typeset li.power-tier-mid {
+    border-left: 3px solid #f39c12;
+    padding-left: 0.6em;
+    margin-left: 0;
+}
+
+.md-typeset li.power-tier-high {
+    border-left: 3px solid #27ae60;
+    padding-left: 0.6em;
+    margin-left: 0;
+}
+
+/* Ensure tier colors work in dark mode */
+[data-md-color-scheme="slate"] .md-typeset li.power-tier-low {
+    border-left-color: #ff6b6b;
+}
+
+[data-md-color-scheme="slate"] .md-typeset li.power-tier-mid {
+    border-left-color: #ffc048;
+}
+
+[data-md-color-scheme="slate"] .md-typeset li.power-tier-high {
+    border-left-color: #51cf66;
+}
+
+/* ============================
+   Monster Statblock Tables
+   ============================ */
+
+/* Multi-column stat tables (Size | Speed | Stamina | Stability | Free Strike) */
+.md-typeset table:not([class]) th:empty ~ th,
+.md-typeset table:not([class]) th:empty ~ td {
+    text-align: center;
+}
+
+/* Tables within blockquotes that have many columns — stat summary style */
+.md-typeset table:not([class]) td br {
+    line-height: 1.2;
+}
+
+/* Scroll wrapper for wide tables (added by ability-cards.js on mobile) */
+.table-scroll-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 0.5em 0;
+    border-radius: 0.4em;
+}
+
+.table-scroll-wrapper > table {
+    margin: 0;
+}
+
+/* Subtle fade hint for scrollable tables */
+.table-scroll-wrapper.is-scrollable {
+    position: relative;
+}
+
+.table-scroll-wrapper.is-scrollable::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 2em;
+    background: linear-gradient(to right, transparent, var(--md-default-bg-color));
+    pointer-events: none;
+    opacity: 0.7;
+    border-radius: 0 0.4em 0.4em 0;
+}
+
+.table-scroll-wrapper.scrolled-right::after {
+    opacity: 0;
+}

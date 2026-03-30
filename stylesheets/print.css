@@ -1,0 +1,147 @@
+/* ============================
+   Print Styles
+   ============================ */
+
+@media print {
+    /* Hide site chrome */
+    .md-header,
+    .md-tabs,
+    .md-sidebar,
+    .md-footer,
+    .md-search,
+    .md-top,
+    .reading-progress-bar,
+    .kb-first-hint,
+    .kb-shortcut-overlay {
+        display: none !important;
+    }
+
+    /* Full-width content */
+    .md-main__inner {
+        max-width: none !important;
+    }
+
+    .md-content {
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .md-grid {
+        max-width: none !important;
+    }
+
+    /* Typography for print */
+    body {
+        font-size: 11pt;
+        color: #000 !important;
+        background: #fff !important;
+    }
+
+    .md-typeset {
+        font-size: 11pt;
+        line-height: 1.5;
+        color: #000 !important;
+    }
+
+    .md-typeset h1 {
+        font-size: 22pt;
+    }
+
+    .md-typeset h2 {
+        font-size: 18pt;
+    }
+
+    .md-typeset h3 {
+        font-size: 15pt;
+    }
+
+    .md-typeset h4 {
+        font-size: 13pt;
+    }
+
+    .md-typeset h5 {
+        font-size: 12pt;
+    }
+
+    .md-typeset h6 {
+        font-size: 11pt;
+    }
+
+    /* Remove backgrounds and shadows */
+    .md-typeset blockquote {
+        border: 1px solid #999 !important;
+        border-left: 3px solid #666 !important;
+        background: none !important;
+        box-shadow: none !important;
+    }
+
+    .md-typeset blockquote[data-ability-type] {
+        transform: none !important;
+    }
+
+    /* Tables: prevent page breaks mid-table */
+    .md-typeset table {
+        break-inside: avoid;
+        border: 1px solid #999;
+    }
+
+    .md-typeset table th,
+    .md-typeset table td {
+        border: 1px solid #ccc;
+        color: #000 !important;
+    }
+
+    /* Blockquotes: prevent page breaks mid-ability */
+    .md-typeset blockquote {
+        break-inside: avoid;
+    }
+
+    /* Simplified horizontal rule (diamond may not print well) */
+    .md-typeset hr {
+        background: none !important;
+        border-top: 1px solid #999 !important;
+        height: auto;
+    }
+
+    .md-typeset hr::after {
+        display: none;
+    }
+
+    /* Links: show URL for external links */
+    .md-typeset a[href^="http"]::after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: #666;
+    }
+
+    /* Internal links: just underline, no URL */
+    .md-typeset a[href^="."]::after,
+    .md-typeset a[href^="/"]::after {
+        content: none;
+    }
+
+    /* Power roll tiers: ensure colors print */
+    .md-typeset li.power-tier-low {
+        border-left: 3px solid #e74c3c !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .md-typeset li.power-tier-mid {
+        border-left: 3px solid #f39c12 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .md-typeset li.power-tier-high {
+        border-left: 3px solid #27ae60 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    /* Page margins */
+    @page {
+        margin: 1.5cm;
+    }
+}

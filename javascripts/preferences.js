@@ -41,12 +41,17 @@
         return null;
     }
 
+    function applyCompact(enabled) {
+        document.documentElement.setAttribute("data-compact", enabled ? "true" : "false");
+    }
+
     // Load + apply ASAP (pre-DOM)
     let saved = {};
     try { saved = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch {}
     if (Object.keys(saved).length) {
         applyFonts(saved);
         if (saved.width) applyWidth(saved.width);
+        if (saved.compact) applyCompact(true);
     }
 
     document.addEventListener("DOMContentLoaded", () => {
@@ -102,5 +107,16 @@
             applyWidth(saved.width);
             save(saved);
         });
+
+        // Compact mode toggle
+        const compactToggle = document.getElementById("compact-toggle");
+        if (compactToggle) {
+            compactToggle.checked = !!saved.compact;
+            compactToggle.addEventListener("change", () => {
+                saved.compact = compactToggle.checked;
+                applyCompact(saved.compact);
+                save(saved);
+            });
+        }
     });
 })();

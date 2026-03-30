@@ -13,6 +13,7 @@
 
 @font-face {
     font-family: "BerlingskeSlab-DBd";
+    font-display: swap;
     src: url("https://db.onlinewebfonts.com/t/8cd8b6c5a3db3b61777d58cb5860fb17.eot");
     src: url("https://db.onlinewebfonts.com/t/8cd8b6c5a3db3b61777d58cb5860fb17.eot?#iefix")format("embedded-opentype"),
         url("https://db.onlinewebfonts.com/t/8cd8b6c5a3db3b61777d58cb5860fb17.woff2")format("woff2"),
@@ -27,6 +28,7 @@ body {
 
 @font-face {
     font-family: "Test Newzald";
+    font-display: swap;
     src: url("https://db.onlinewebfonts.com/t/776429d73240ce386ead55e740ef2ece.eot");
     src: url("https://db.onlinewebfonts.com/t/776429d73240ce386ead55e740ef2ece.eot?#iefix")format("embedded-opentype"),
     url("https://db.onlinewebfonts.com/t/776429d73240ce386ead55e740ef2ece.woff2")format("woff2"),
@@ -37,6 +39,7 @@ body {
 
 @font-face {
     font-family: "Beaufort W01 Heavy";
+    font-display: swap;
     src: url("https://db.onlinewebfonts.com/t/5a8d949826c5f2d8733fa324b51a507d.eot");
     src: url("https://db.onlinewebfonts.com/t/5a8d949826c5f2d8733fa324b51a507d.eot?#iefix")format("embedded-opentype"),
         url("https://db.onlinewebfonts.com/t/5a8d949826c5f2d8733fa324b51a507d.woff2")format("woff2"),
@@ -77,6 +80,36 @@ body {
     font-size: 1.75em;
     color: inherit;
     font-weight: bold;
+}
+
+/* ============================
+   Reading Typography
+   ============================ */
+
+/* Improved line height for slab serif body text */
+.md-typeset {
+    line-height: 1.7;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Better spacing before major headings in long content */
+.md-typeset h2 {
+    margin-top: 1.5em;
+}
+
+.md-typeset h3 {
+    margin-top: 1.2em;
+}
+
+/* Tighter gap between heading and first paragraph */
+.md-typeset h1 + p,
+.md-typeset h2 + p,
+.md-typeset h3 + p,
+.md-typeset h4 + p,
+.md-typeset h5 + p,
+.md-typeset h6 + p {
+    margin-top: 0.3em;
 }
 
 /* Callouts */
