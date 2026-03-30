@@ -1,7 +1,6 @@
 /* The tables used to display abilities should not have headers to avoid sorttable tables */
 th:empty {
     display: none;
-    value: remove;
 }
 
 .md-grid {
@@ -180,38 +179,15 @@ th:empty {
     margin-top: 1em;
 }
 
-/* Ability-type colored left borders */
-.md-typeset blockquote[data-ability-type="strike"] {
-    border-left: 3px solid #e74c3c !important;
-}
-
-.md-typeset blockquote[data-ability-type="ranged"] {
-    border-left: 3px solid #3498db !important;
-}
-
-.md-typeset blockquote[data-ability-type="maneuver"] {
-    border-left: 3px solid #9b59b6 !important;
-}
-
-.md-typeset blockquote[data-ability-type="triggered"] {
-    border-left: 3px solid #f39c12 !important;
-}
-
-.md-typeset blockquote[data-ability-type="area"] {
-    border-left: 3px solid #1abc9c !important;
-}
-
-.md-typeset blockquote[data-ability-type="passive"] {
-    border-left: 3px solid #95a5a6 !important;
-}
-
-.md-typeset blockquote[data-ability-type="villain"] {
-    border-left: 3px solid #c0392b !important;
-}
-
-.md-typeset blockquote[data-ability-type="special"] {
-    border-left: 3px solid #8e44ad !important;
-}
+/* Ability-type colored left borders (colors from palette.css) */
+.md-typeset blockquote[data-ability-type="strike"]    { border-left: 3px solid var(--sc-ability-strike)    !important; }
+.md-typeset blockquote[data-ability-type="ranged"]     { border-left: 3px solid var(--sc-ability-ranged)     !important; }
+.md-typeset blockquote[data-ability-type="maneuver"]   { border-left: 3px solid var(--sc-ability-maneuver)   !important; }
+.md-typeset blockquote[data-ability-type="triggered"]  { border-left: 3px solid var(--sc-ability-triggered)  !important; }
+.md-typeset blockquote[data-ability-type="area"]       { border-left: 3px solid var(--sc-ability-area)       !important; }
+.md-typeset blockquote[data-ability-type="passive"]    { border-left: 3px solid var(--sc-ability-passive)    !important; }
+.md-typeset blockquote[data-ability-type="villain"]    { border-left: 3px solid var(--sc-ability-villain)    !important; }
+.md-typeset blockquote[data-ability-type="special"]    { border-left: 3px solid var(--sc-ability-special)    !important; }
 
 /* Subtle hover lift for ability blockquotes */
 .md-typeset blockquote[data-ability-type] {
@@ -223,60 +199,13 @@ th:empty {
     transform: translateY(-1px);
 }
 
-/* Dark mode: brighter ability-type borders */
-[data-md-color-scheme="slate"] .md-typeset blockquote[data-ability-type="strike"] {
-    border-left-color: #ff6b6b !important;
-}
-
-[data-md-color-scheme="slate"] .md-typeset blockquote[data-ability-type="ranged"] {
-    border-left-color: #74b9ff !important;
-}
-
-[data-md-color-scheme="slate"] .md-typeset blockquote[data-ability-type="maneuver"] {
-    border-left-color: #a29bfe !important;
-}
-
-[data-md-color-scheme="slate"] .md-typeset blockquote[data-ability-type="triggered"] {
-    border-left-color: #ffc048 !important;
-}
-
-[data-md-color-scheme="slate"] .md-typeset blockquote[data-ability-type="area"] {
-    border-left-color: #55efc4 !important;
-}
-
-[data-md-color-scheme="slate"] .md-typeset blockquote[data-ability-type="passive"] {
-    border-left-color: #b2bec3 !important;
-}
-
-[data-md-color-scheme="slate"] .md-typeset blockquote[data-ability-type="villain"] {
-    border-left-color: #ff7675 !important;
-}
-
-[data-md-color-scheme="slate"] .md-typeset blockquote[data-ability-type="special"] {
-    border-left-color: #d68fff !important;
-}
-
-[data-md-color-scheme="slate"] .md-typeset blockquote[data-ability-type]:hover {
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-}
-
 /* ============================
    Dark Mode Refinements
    ============================ */
 
-/* Increase body text contrast in dark mode */
-[data-md-color-scheme="slate"] .md-typeset {
-    color: rgba(255, 255, 255, 0.85);
-}
-
-/* Warmer code block tint */
-[data-md-color-scheme="slate"] .md-typeset code {
-    background-color: rgba(255, 255, 255, 0.08);
-}
-
 /* Browse index cards: visible borders in dark mode */
 [data-md-color-scheme="slate"] .browse-index li {
-    border-color: rgba(255, 255, 255, 0.12);
+    border-color: rgba(230, 225, 218, 0.12);
 }
 
 [data-md-color-scheme="slate"] .browse-index li:hover {

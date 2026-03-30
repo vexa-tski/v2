@@ -1,0 +1,95 @@
+/* ============================
+   Steel Compendium Color Palette
+   ============================
+   Central color definitions. All themed colors flow from here.
+   Ability type + power tier colors also defined as variables
+   so the entire palette can be changed from one file.
+   ============================ */
+
+/* ── Light Mode ── */
+[data-md-color-scheme="default"] {
+    /* Brand */
+    --sc-steel:             #5a6368;
+    --sc-steel-light:       #8e959a;
+    --sc-steel-lighter:     #b0b7bb;
+
+    /* Accent — burnished gold */
+    --md-accent-fg-color:            #8a6b20;
+    --md-accent-fg-color--transparent: rgba(138, 107, 32, 0.12);
+
+    /* Primary — dark steel nav bar */
+    --md-primary-fg-color:        #2c3338;
+    --md-primary-fg-color--light: #4a5054;
+    --md-primary-fg-color--dark:  #1a1d20;
+    --md-primary-bg-color:        #faf8f5;
+
+    /* Surfaces — parchment tint */
+    --md-default-bg-color:          #faf8f5;
+    --md-default-bg-color--light:   #f2efe9;
+    --md-default-fg-color:          #2c2c2c;
+    --md-default-fg-color--light:   #555;
+    --md-default-fg-color--lighter: #888;
+    --md-default-fg-color--lightest: #d2cdc5;
+
+    /* Code blocks */
+    --md-code-bg-color: #f0ece4;
+
+    /* ── Ability type borders ── */
+    --sc-ability-strike:    #c0392b;
+    --sc-ability-ranged:    #2874a6;
+    --sc-ability-maneuver:  #7d3c98;
+    --sc-ability-triggered: #b9770e;
+    --sc-ability-area:      #148f77;
+    --sc-ability-passive:   #7b8a8b;
+    --sc-ability-villain:   #922b21;
+    --sc-ability-special:   #6c3483;
+
+    /* ── Power roll tiers ── */
+    --sc-tier-low:  #c0392b;
+    --sc-tier-mid:  #b9770e;
+    --sc-tier-high: #1e8449;
+}
+
+/* ── Dark Mode ── */
+[data-md-color-scheme="slate"] {
+    /* Brand */
+    --sc-steel:             #8e959a;
+    --sc-steel-light:       #b0b7bb;
+    --sc-steel-lighter:     #cdd1d4;
+
+    /* Accent — brighter gold for dark bg */
+    --md-accent-fg-color:            #d4a84b;
+    --md-accent-fg-color--transparent: rgba(212, 168, 75, 0.14);
+
+    /* Primary — charcoal-steel nav */
+    --md-primary-fg-color:        #1a1d20;
+    --md-primary-fg-color--light: #2c3338;
+    --md-primary-fg-color--dark:  #0f1113;
+    --md-primary-bg-color:        #e0ddd8;
+
+    /* Surfaces — warm charcoal, not cold gray */
+    --md-default-bg-color:          #1a1d20;
+    --md-default-bg-color--light:   #22262a;
+    --md-default-fg-color:          rgba(230, 225, 218, 0.88);
+    --md-default-fg-color--light:   rgba(230, 225, 218, 0.62);
+    --md-default-fg-color--lighter: rgba(230, 225, 218, 0.38);
+    --md-default-fg-color--lightest: rgba(230, 225, 218, 0.12);
+
+    /* Code blocks */
+    --md-code-bg-color: rgba(230, 225, 218, 0.06);
+
+    /* ── Ability type borders (brighter for dark bg) ── */
+    --sc-ability-strike:    #e74c3c;
+    --sc-ability-ranged:    #5dade2;
+    --sc-ability-maneuver:  #bb8fce;
+    --sc-ability-triggered: #f0b429;
+    --sc-ability-area:      #48c9a4;
+    --sc-ability-passive:   #b0b7bb;
+    --sc-ability-villain:   #e57373;
+    --sc-ability-special:   #ce93d8;
+
+    /* ── Power roll tiers (brighter for dark bg) ── */
+    --sc-tier-low:  #e74c3c;
+    --sc-tier-mid:  #f0b429;
+    --sc-tier-high: #4caf6a;
+}

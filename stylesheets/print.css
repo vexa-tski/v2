@@ -123,19 +123,19 @@
 
     /* Power roll tiers: ensure colors print */
     .md-typeset li.power-tier-low {
-        border-left: 3px solid #e74c3c !important;
+        border-left: 3px solid var(--sc-tier-low, #c0392b) !important;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
     }
 
     .md-typeset li.power-tier-mid {
-        border-left: 3px solid #f39c12 !important;
+        border-left: 3px solid var(--sc-tier-mid, #b9770e) !important;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
     }
 
     .md-typeset li.power-tier-high {
-        border-left: 3px solid #27ae60 !important;
+        border-left: 3px solid var(--sc-tier-high, #1e8449) !important;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
     }
