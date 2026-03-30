@@ -17,6 +17,9 @@
     --md-accent-fg-color:            #2a7b88;
     --md-accent-fg-color--transparent: rgba(42, 123, 136, 0.10);
 
+    /* Links */
+    --md-typeset-a-color: #2a7b88;
+
     /* Primary — dark steel nav bar */
     --md-primary-fg-color:        #2c3338;
     --md-primary-fg-color--light: #4a5054;
@@ -60,6 +63,9 @@
     /* Accent — brighter teal for dark bg */
     --md-accent-fg-color:            #4db8c7;
     --md-accent-fg-color--transparent: rgba(77, 184, 199, 0.12);
+
+    /* Links — explicit teal so they don't inherit dark primary */
+    --md-typeset-a-color: #4db8c7;
 
     /* Primary — charcoal-steel nav */
     --md-primary-fg-color:        #1a1e21;
